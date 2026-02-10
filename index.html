@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>¡Gracias, equipo! 💖</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #2d3436;
+    }
+    .message-box {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 90%;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      z-index: 10;
+    }
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 15px;
+      color: #e17055;
+    }
+    p {
+      font-size: 1.2em;
+      line-height: 1.5;
+    }
+    .heart {
+      position: absolute;
+      font-size: 24px;
+      opacity: 0.7;
+      animation: float 15s infinite ease-in-out;
+      z-index: 1;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      25% { transform: translateY(-100px) rotate(10deg); }
+      50% { transform: translateY(-50px) rotate(-10deg); }
+      75% { transform: translateY(-150px) rotate(5deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="message-box">
+    <h1>¡Feliz Día del Amor y la Amistad!</h1>
+    <p>Gracias por ser parte de este camino.<br>
+       Su amistad, apoyo y buen humor hacen la diferencia.<br>
+       ¡Los aprecio mucho!</p>
+  </div>
+
+  <script>
+    const colors = ['#e17055', '#fd79a8', '#6c5ce7', '#00b894', '#0984e3'];
+    const container = document.body;
+    const heartCount = 20;
+
+    for (let i = 0; i < heartCount; i++) {
+      const heart = document.createElement('div');
+      heart.innerHTML = '❤';
+      heart.className = 'heart';
+      heart.style.left = `${Math.random() * 100}vw`;
+      heart.style.top = `${Math.random() * 100}vh`;
+      heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+      heart.style.fontSize = `${Math.random() * 20 + 16}px`;
+      heart.style.animationDuration = `${Math.random() * 10 + 10}s`;
+      heart.style.animationDelay = `${Math.random() * 5}s`;
+      container.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
